@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fantasy Aurora Website</title>
+  <title>Our Products - Fantasy Aurora</title>
   <style>
-    /* Reset some default styles */
     * {
       margin: 0;
       padding: 0;
@@ -24,7 +23,6 @@
       background: linear-gradient(90deg, #000000, #000000);
       padding: 20px;
       text-align: center;
-      position: relative;
     }
 
     header h1 {
@@ -45,25 +43,9 @@
       }
     }
 
-    /* Hero section with blue gradient and aurora effects */
-    .hero {
-      background: linear-gradient(135deg, #0d47a1, #1976d2);
-      padding: 80px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #fff;
-      text-shadow: 0 0 10px #fff, 0 0 20px #00ffcc, 0 0 30px #ff69b4;
-    }
-
-    /* Aurora overlays for pink and green glows */
+    /* Aurora overlays */
     .aurora-pink, .aurora-green {
-      position: absolute;
+      position: fixed;
       top: -50%;
       left: -50%;
       width: 200%;
@@ -72,6 +54,7 @@
       border-radius: 50%;
       opacity: 0.6;
       animation: rotate 30s linear infinite;
+      z-index: -1;
     }
 
     .aurora-pink {
@@ -93,43 +76,52 @@
       to {transform: rotate(360deg);}
     }
 
-    /* Content sections */
-    section {
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #000000, #1a1a1a);
+    /* Main container */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    section h3 {
+    /* Page title */
+    h2 {
       text-align: center;
+      font-size: 2.5em;
       margin-bottom: 20px;
-      font-size: 2em;
-      color: #ff69b4; /* Pink accent */
+      color: #ff69b4;
     }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    /* Product grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
 
-    .card {
+    /* Product card styles */
+    .product-card {
       background: linear-gradient(135deg, #ff69b4, #00ff7f);
       padding: 20px;
       border-radius: 15px;
-      width: 300px;
       box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .card:hover {
+    .product-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 0 40px rgba(0,255,127,0.7);
+      box-shadow: 0 0 40px rgba(0, 255, 127, 0.7);
     }
 
-    .card h4 {
+    .product-title {
+      font-size: 1.2em;
       margin-bottom: 10px;
       color: #fff;
+      font-weight: bold;
+    }
+
+    .product-desc {
+      font-size: 1em;
+      color: #eee;
     }
 
     /* Footer styles */
@@ -139,54 +131,76 @@
       text-align: center;
       font-size: 1em;
       color: #ccc;
+      margin-top: 40px;
     }
 
     /* Responsive adjustments */
     @media(max-width: 768px){
-      .cards {
-        flex-direction: column;
-        align-items: center;
+      h2 {
+        font-size: 2em;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Fantasy Aurora</h1>
-  </header>
-
-  <!-- Aurora overlays for magical glow -->
+  <!-- Aurora overlays -->
   <div class="aurora-pink"></div>
   <div class="aurora-green"></div>
 
-  <section class="hero">
-    <h2>Welcome to the best website ever for an awesome person</h2>
-    <p>Experience the mesmerizing auroras of pink and green.</p>
-  </section>
+  <header>
+    <h1>Our Products</h1>
+  </header>
 
-  <section>
-    <h3>Features</h3>
-    <div class="cards">
-      <div class="card">
-        <h4>driving in my car</h4>
-        <p>right after a beer.</p>
+  <div class="container">
+    <h2>Premium & Exclusive Tools</h2>
+    <div class="products">
+      
+      <div class="product-card">
+        <div class="product-title">Premium Nuke Commands</div>
+        <div class="product-desc">Powerful command set for complete server control, designed for premium users.</div>
       </div>
-      <div class="card">
-        <h4>cheese</h4>
-        <p>Amazing personality 😎</p>
+
+      <div class="product-card">
+        <div class="product-title">Premium Nuke Bot</div>
+        <div class="product-desc">A high-quality, customizable bot for nuking servers with advanced features.</div>
       </div>
-      <div class="card">
-        <h4>Epic stuff</h4>
-        <p>cool colors</p>
+
+      <div class="product-card">
+        <div class="product-title">Premium Raid Commands</div>
+        <div class="product-desc">Specialized commands to facilitate raids with maximum efficiency.</div>
       </div>
+
+      <div class="product-card">
+        <div class="product-title">Premium Raid Bot</div>
+        <div class="product-desc">A dedicated raid bot with exclusive features and customization options.</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-title">Full Premium Raid Bot Package</div>
+        <div class="product-desc">
+          Includes: raid commands, custom status, custom profile picture, custom name.
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-title">Full Premium Nuke Bot Package</div>
+        <div class="product-desc">
+          Includes: custom server profile picture, role names, server name, bot name, channels, message.
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-title">Onyx Tool (Coming Soon)</div>
+        <div class="product-desc">Stay tuned for the latest tool in our lineup, coming soon!</div>
+      </div>
+      
     </div>
-  </section>
+  </div>
 
-  <section>
-    <h3>Made for a cool person :O</h3>
-    <p style="text-align:center; max-width:600px; margin:auto;">cheese, cause why not</p>
-  </section>
+  <footer>
+    &copy; 2024 Fantasy Aurora. All rights reserved.
+  </footer>
 
 </body>
 </html>
